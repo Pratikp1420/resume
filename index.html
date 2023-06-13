@@ -194,17 +194,17 @@
 
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
-        var tablecontents = document.getElementsByClassName("tab-contents");
+        var tabcontents = document.getElementsByClassName("tab-contents");
 
         function opentab(tabname){
             for(tablink of tablinks){
-                tablink.classlist.remove("active-link");
+                tablink.classList.remove("active-link");
             }
-            for(tablcontent of tabcontents){
-                tabcontent.classlist.remove("active-tab");
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
             }
-            event.currentTarget.classlist.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab")
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab") 
         }
     </script>
 
@@ -231,7 +231,7 @@
                 msg.innerHTML = "Message Sent Sucessfully"
                 setTimeout(function(){
                     msg.innerHTML = ""
-                }5000)
+                },5000)
                 form.reset()
             })
             .catch(error => console.error('Error!', error.message))
